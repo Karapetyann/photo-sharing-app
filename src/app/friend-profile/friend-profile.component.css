@@ -1,0 +1,68 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.container {
+  margin-top: 100px;
+}
+
+.card {
+  border-radius: 15px;
+}
+
+.card-body {
+  padding: 40px;
+}
+
+h2, h4 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+}
+
+.photo-thumbnail {
+  border-radius: 10px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.btn-primary {
+  border-radius: 10px;
+}
+
+.modal.show {
+  display: block;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.list-group-item {
+  border: none;
+}
+
+.list-group-item + .list-group-item {
+  border-top: 1px solid #e9ecef;
+}

@@ -1,0 +1,59 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-lg border-0 rounded-lg">
+        <div class="card-body p-4">
+          <h2 class="text-center mb-4">{{ username }}'s Profile</h2>
+          <div class="text-center mb-4">
+            <img [src]="profilePictureUrl" class="img-thumbnail rounded-circle profile-picture mb-3"
+                 alt="Profile Picture">
+          </div>
+          <h4 class="mt-4 mb-3 text-center">Photos:</h4>
+          <div class="row">
+            <div class="col-md-4 mb-3" *ngFor="let photo of photos">
+              <img [src]="photo.url" class="img-thumbnail rounded photo-thumbnail w-100" alt="{{photo.description}}"
+                   (click)="openPhotoModal(photo)">
+            </div>
+          </div>
+          <div class="text-center mt-4">
+            <button class="btn btn-primary" (click)="viewFriends()">View Friends</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" [ngClass]="{'show d-block': isPhotoModalOpen}"
+     [ngStyle]="{'background-color': 'rgba(0, 0, 0, 0.5)'}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Photo Details</h5>
+        <button type="button" class="close" aria-label="Close" (click)="closePhotoModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img [src]="selectedPhoto?.url" class="img-fluid mb-3" alt="Selected Photo">
+        <p>{{ selectedPhoto?.description }}</p>
+        <p>Likes: {{ likesCount }}</p>
+        <button class="btn btn-primary" (click)="toggleLikePhoto(selectedPhoto?.id)">
+          {{ hasUserLiked ? 'Unlike' : 'Like' }}
+        </button>
+        <button class="btn btn-secondary" (click)="viewAllLikers()">All Likes</button>
+        <div *ngIf="likersList.length > 0" class="mt-3">
+          <p>Liked by:</p>
+          <ul class="list-group list-group-flush">
+            <li *ngFor="let liker of likersList" class="list-group-item">
+              {{ liker.username }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closePhotoModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

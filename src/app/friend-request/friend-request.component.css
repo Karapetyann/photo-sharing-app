@@ -1,0 +1,42 @@
+.modal-header {
+  position: relative;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.btn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.friend-requests-container {
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  padding: 10px 0;
+}
+
+.list-group-item + .list-group-item {
+  border-top: 1px solid #e9ecef;
+}
+
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+}
+
+.me-2 {
+  margin-right: 0.5rem;
+}
